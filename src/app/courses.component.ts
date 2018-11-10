@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { getOrCreateInjectable } from '@angular/core/src/render3/di';
+import { CourseService } from './courses.service';
 
 @Component({
     selector : 'courses' ,
@@ -15,7 +16,12 @@ import { getOrCreateInjectable } from '@angular/core/src/render3/di';
 //here *ngFor is the directives and let course of courses iterating the courses
 export class CoursesComponent{
     title= "List of courses";
-    courses = ["course1","course2","course3"];
+    courses;
+
+    constructor(){
+        let service = new CourseService();//creating the object of service 
+        this.courses = service.getCourses();//calling the method
+    }
 
     getTitle(){
         return this.title;
