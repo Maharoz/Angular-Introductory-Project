@@ -18,8 +18,7 @@ export class CoursesComponent{
     title= "List of courses";
     courses;
 
-    constructor(){
-        let service = new CourseService();//creating the object of service 
+    constructor(service: CourseService){     
         this.courses = service.getCourses();//calling the method
     }
 
