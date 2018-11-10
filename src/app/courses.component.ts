@@ -5,25 +5,14 @@ import { CourseService } from './courses.service';
 @Component({
     selector : 'courses' ,
     template : `
-                <h2>{{ title }}</h2>
-                <ul>
-                <li *ngFor="let course of courses">
-                {{ course }}
-                </li>
-                </ul>
+                <button class="btn btn-primary">Save</button>
     `
 })
+//{{ Double qutaion is stands for interpolation }}
 //here *ngFor is the directives and let course of courses iterating the courses
 export class CoursesComponent{
     title= "List of courses";
-    courses;
-
-    constructor(service: CourseService){     
-        this.courses = service.getCourses();//calling the method
-    }
-
-    getTitle(){
-        return this.title;
-    }
+    imageUrl= "http://lorempixel.com/400/200";
+ 
 }
 //ng g c course
