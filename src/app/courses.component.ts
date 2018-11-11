@@ -5,7 +5,7 @@ import { CourseService } from './courses.service';
 @Component({
     selector : 'courses' ,
     template : `
-                <button class="btn btn-primary" [class.active]="isActive">Save</button>
+                <button [style.backgroundcolor]="isActive ? 'blue' : 'white'">Save</button>
     `
 })
 //{{ Double qutaion is stands for interpolation }}
