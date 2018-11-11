@@ -5,14 +5,14 @@ import { CourseService } from './courses.service';
 @Component({
     selector : 'courses' ,
     template : `
-   <input (keyup.enter)="onKeyUp()"/>
+   <input #email (keyup.enter)="onKeyUp(email.value)"/>
     `
 })
 
 export class CoursesComponent{
     
-    onKeyUp(){     
-        console.log("Enter was pressed");
+    onKeyUp(email){     
+        console.log(email);
     }
 }
 //ng g c course
