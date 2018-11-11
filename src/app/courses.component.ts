@@ -5,7 +5,7 @@ import { CourseService } from './courses.service';
 @Component({
     selector : 'courses' ,
     template : `
-                <button [style.backgroundcolor]="isActive ? 'blue' : 'white'">Save</button>
+                <button (click)="onSave()">Save</button>
     `
 })
 //{{ Double qutaion is stands for interpolation }}
@@ -13,7 +13,11 @@ import { CourseService } from './courses.service';
 export class CoursesComponent{
     // title= "List of courses";
     // imageUrl= "http://lorempixel.com/400/200";
-    isActive = true;
+    // isActive = true;
+
+    onSave(){
+        console.log('button was clicked');
+    }
  
 }
 //ng g c course
