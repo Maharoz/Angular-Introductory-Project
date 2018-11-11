@@ -5,15 +5,22 @@ import { CourseService } from './courses.service';
 @Component({
     selector : 'courses' ,
     template : `
+    {{ course.title | uppercase | lowercase }}<br/>
+    {{ course.students | number }}<br/>
+    {{ course.rating | number : '1.2-2' }}<br/>
+    {{ course.price | currency:'AUD':true:'3.2-2' }}<br/>
+    {{ course.releaseDate | date:'shortDate' }}
   
-   <input [(ngModel)]="email" (keyup.enter)="onKeyUp()"/>
+   
     `
 })
 
 export class CoursesComponent{
-    email= "me@example.com";
-    onKeyUp(){     
-        console.log(this.email);
-    }
+   course = {
+       title: "the complete angular course",
+       rating:4.9953656,
+       students:309877,
+       price:190.95,
+       releaseDate:new Date(2016,3,1)
+   }
 }
-//ng g c course
