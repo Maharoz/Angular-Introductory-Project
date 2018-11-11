@@ -22,6 +22,7 @@ export class CoursesComponent{
     }
 
     onSave($event){
+        $event.stopPropagation(); //onDivClicked will not fired
         console.log("button was clicked", $event);
     }
  
