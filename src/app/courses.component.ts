@@ -5,7 +5,9 @@ import { CourseService } from './courses.service';
 @Component({
     selector : 'courses' ,
     template : `
+    <div (click)="onDivClicked()">
                 <button (click)="onSave($event)">Save</button>
+    </div>
     `
 })
 //{{ Double qutaion is stands for interpolation }}
@@ -15,8 +17,12 @@ export class CoursesComponent{
     // imageUrl= "http://lorempixel.com/400/200";
     // isActive = true;
 
+    onDivClicked(){
+        console.log("div was clicked");
+    }
+
     onSave($event){
-        console.log('button was clicked', $event);
+        console.log("button was clicked", $event);
     }
  
 }
