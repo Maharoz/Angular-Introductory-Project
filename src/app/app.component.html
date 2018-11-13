@@ -1,9 +1,7 @@
-<!-- <app-favorite [isFavorite]="post.isFavorite" (change)="onFavoriteChanged($event)"></app-favorite> -->
+<div *ngIf="courses.length>0">
+    List of courses
+</div>
 
-<app-panel>
-    <ng-container class="heading">Heading</ng-container>
-    <div class="body">
-        <h2>Body</h2>
-        <p>Some content here...</p>
-    </div>
-</app-panel>
+<div *ngIf="courses.length==0">
+    No Courses yet
+</div>
