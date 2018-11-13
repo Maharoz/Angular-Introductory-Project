@@ -11,7 +11,7 @@ export class AppComponent {
     isFavorite:true
   }
 
-  onFavoriteChanged(isFavorite){
-    console.log("favourite changed", isFavorite);
+  onFavoriteChanged(eventArgs){
+    console.log("favourite changed", eventArgs);
   }
 }
