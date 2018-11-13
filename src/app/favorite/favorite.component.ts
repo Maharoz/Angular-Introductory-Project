@@ -1,13 +1,12 @@
-import { Component, OnInit ,Output, EventEmitter} from '@angular/core';
+import { Component, OnInit ,Output, EventEmitter, Input} from '@angular/core';
 
 @Component({
   selector: 'app-favorite',
   templateUrl: './favorite.component.html',
   styleUrls: ['./favorite.component.css'],
-  inputs:['isFavorite']
 })
 export class FavoriteComponent implements OnInit {
- isFavorite:boolean;
+ @Input('isFavorite')isFavorite:boolean;
  @Output('change') change = new EventEmitter();
   constructor() { }
 
