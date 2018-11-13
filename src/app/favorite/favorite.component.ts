@@ -20,3 +20,7 @@ export class FavoriteComponent implements OnInit {
   }
 
 }
+
+export interface FavouriteChangedEventArgs{
+  newValue : boolean;
+}
