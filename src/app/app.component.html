@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 <ul>
-    <li *ngFor="let course of courses; index as i"> 
-       {{i}} - {{ course.name }}      
+    <li *ngFor="let course of courses; even as isEven"> 
+       {{i}} - {{ course.name }} <span *ngIf="isEven">(EVEN)</span>
     </li>
 </ul>
