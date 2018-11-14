@@ -7,5 +7,10 @@ import { FavouriteChangedEventArgs } from './favorite/favorite.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-canSave=true;
+task = {
+  title: 'Review Application',
+  assignee:{
+    name:'john smith'
+  }
+}
 }
