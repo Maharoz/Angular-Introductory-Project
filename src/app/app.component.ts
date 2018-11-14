@@ -7,17 +7,12 @@ import { FavouriteChangedEventArgs } from './favorite/favorite.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-courses;
+  post ={
+    title: "Title",
+    isFavorite:true
+  }
 
-loadCourses(){
-this.courses=[
-  {id:1 , name:'course 1'},
-  {id:2 , name:'course 2'},
-  {id:3 , name:'course 3'}
-];
-}
-
-trackCourse(index,course){
-  return course? course.id : undefined;
-}
+  onFavoriteChanged(eventArgs: FavouriteChangedEventArgs){
+    console.log("Favourite changed", eventArgs);
+  }
 }

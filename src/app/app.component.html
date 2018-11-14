@@ -1,9 +1,3 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-<button (click)="loadCourses()">Load Courses</button>
-<ul>
-    <li *ngFor="let course of courses; trackBy:trackCourse"> 
-        {{ course.name }}
-       
-    </li>
-</ul>
+<app-favorite [isFavorite]="post.isFavorite" (change)="onFavoriteChanged($event)"></app-favorite>

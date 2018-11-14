@@ -7,5 +7,9 @@
 <span class="glyphicon"
     [class.glyphicon-star-empty]="!isFavorite"
     [class.glyphicon-star]="isFavorite"
+    [ngClass]="{
+        'glyphicon-star': isFavorite,
+        'glyphicon-start-empty':!isFavorite
+    }"
     (click)="onClick()">
 </span>
