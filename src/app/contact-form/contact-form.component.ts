@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactFormComponent implements OnInit {
 
+  contactMethod=[
+{id:1,name:'Email'},
+{id:2,name:'Phone'},
+
+  ];
   log(x) {console.log(x); }
   constructor() { }
 
