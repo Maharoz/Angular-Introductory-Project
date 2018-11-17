@@ -1,9 +1,10 @@
-import { Component, OnInit ,Output, EventEmitter, Input} from '@angular/core';
+import { Component, OnInit ,Output, EventEmitter, Input, ViewEncapsulation} from '@angular/core';
 
 @Component({
   selector: 'app-favorite',
   templateUrl: './favorite.component.html',
-  styleUrls: ['./favorite.component.css']
+  styleUrls: ['./favorite.component.css'],
+  encapsulation : ViewEncapsulation.Emulated
 })
 export class FavoriteComponent {
  @Input('isFavorite')isFavorite:boolean;
