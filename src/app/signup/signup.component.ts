@@ -6,15 +6,13 @@ import {FormGroup , FormControl, Validators} from '@angular/forms';
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
+
 export class SignupComponent implements OnInit {
   form = new FormGroup({
-    username : new FormControl('',[
-      Validators.required,
-      Validators.minLength(3),
-      UsernameValidators.cannotContainSpace
-    ]),
+    username : new FormControl('',
+    Validators.required,
+    UsernameValidators.shouldBeUnique),
     password : new FormControl('',Validators.required)
-    
   });
 
   constructor() { }
