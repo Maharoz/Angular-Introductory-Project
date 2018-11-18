@@ -13,6 +13,7 @@ import { PanelComponent } from './panel/panel.component';
 import { InputFormatDirective } from './input-format.directive';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { SignupComponent } from './signup/signup.component';
+import { NewCourseFormComponent } from './new-course-form/new-course-form.component';
 
 
 
@@ -26,7 +27,8 @@ import { SignupComponent } from './signup/signup.component';
     PanelComponent,
     InputFormatDirective,
     ContactFormComponent,
-    SignupComponent
+    SignupComponent,
+    NewCourseFormComponent
   ],
   imports: [
     BrowserModule,
