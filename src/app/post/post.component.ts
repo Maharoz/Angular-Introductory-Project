@@ -1,3 +1,4 @@
+import { BadInput } from './../common/bad-input';
 import { AppError } from './../common/app-error';
 import { PostService } from './../services/post.service';
 import { Component, OnInit } from '@angular/core';
@@ -40,9 +41,9 @@ this.service.getPosts()
       post['id'] = response.json().id;
       this.posts.splice(0,0, post);
       
-    },(error : Response) =>{
-      if(error.status === 400){
-
+    },(error : AppError) =>{
+      if(error instanceof BadInput){
+       // this.form.setError(error.originalError);
       }else{
         alert('An unexpected error occured');
         console.log(error);
