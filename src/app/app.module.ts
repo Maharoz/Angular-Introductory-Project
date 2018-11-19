@@ -3,7 +3,7 @@ import { PostService } from './services/post.service';
 import { SummaryPipe } from './summary.pipe';
 import { CoursesComponent } from './courses.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
@@ -17,6 +17,8 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
 import { SignupComponent } from './signup/signup.component';
 import { NewCourseFormComponent } from './new-course-form/new-course-form.component';
 import { PostComponent } from './post/post.component';
+import { AppErrorHandler } from './common/app-error-handler';
+import { errorHandler } from '@angular/platform-browser/src/browser';
 
 
 
@@ -42,7 +44,9 @@ import { PostComponent } from './post/post.component';
   ],
   providers: [
    CourseService,
-   PostService // dependence injection
+   PostService,
+   { provide : ErrorHandler , useClass: AppErrorHandler}
+ 
   ],
   bootstrap: [AppComponent]
 })

@@ -25,10 +25,6 @@ this.service.getPosts()
       response =>{
       //console.log(response.json());
       this.posts = response.json();
-    },
-     error =>{
-      alert('An unexpected error occured');
-      console.log(error);
     });
    }
 
@@ -45,8 +41,7 @@ this.service.getPosts()
       if(error instanceof BadInput){
        // this.form.setError(error.originalError);
       }else{
-        alert('An unexpected error occured');
-        console.log(error);
+       throw error;
       }      
     });
    }
@@ -56,10 +51,7 @@ this.service.getPosts()
      .subscribe(
        response =>{
       console.log(response.json());
-     },error =>{
-      alert('An unexpected error occured');
-      console.log(error);
-    });
+     });
    }
 
    deletePost(post){
@@ -73,8 +65,7 @@ this.service.getPosts()
        if(error instanceof NotFoundError)
        alert('this post has already been deleted');
        else{
-        alert('An unexpected error occured');
-        console.log(error);
+        throw error;
        }
      
     });
