@@ -21,6 +21,9 @@ this.service.getPosts()
     .subscribe(response =>{
       //console.log(response.json());
       this.posts = response.json();
+    }, error =>{
+      alert('An unexpected error occured');
+      console.log(error);
     });
    }
 
@@ -32,6 +35,9 @@ this.service.getPosts()
       post['id'] = response.json().id;
       this.posts.splice(0,0, post);
       
+    },error =>{
+      alert('An unexpected error occured');
+      console.log(error);
     });
    }
 
@@ -39,7 +45,10 @@ this.service.getPosts()
     this.service.updatePost(post)
      .subscribe(response =>{
       console.log(response.json());
-     })
+     },error =>{
+      alert('An unexpected error occured');
+      console.log(error);
+    });
    }
 
    deletePost(post){
@@ -47,7 +56,10 @@ this.service.getPosts()
      .subscribe(response =>{
        let index = this.posts.indexOf(post);
        this.posts.splice(index,1);
-     })
+     },error =>{
+      alert('An unexpected error occured');
+      console.log(error);
+    });
   }
 
 }
