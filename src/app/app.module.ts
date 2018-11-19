@@ -1,3 +1,4 @@
+import { PostService } from './services/post.service';
 
 import { SummaryPipe } from './summary.pipe';
 import { CoursesComponent } from './courses.component';
@@ -40,7 +41,8 @@ import { PostComponent } from './post/post.component';
     HttpModule
   ],
   providers: [
-   CourseService // dependence injection
+   CourseService,
+   PostService // dependence injection
   ],
   bootstrap: [AppComponent]
 })
