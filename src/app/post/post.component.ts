@@ -18,10 +18,12 @@ export class PostComponent implements OnInit {
   ngOnInit() {
 
 this.service.getPosts()
-    .subscribe(response =>{
+    .subscribe(
+      response =>{
       //console.log(response.json());
       this.posts = response.json();
-    }, error =>{
+    },
+     error =>{
       alert('An unexpected error occured');
       console.log(error);
     });
@@ -31,19 +33,25 @@ this.service.getPosts()
      let post = { title : input.value };
      input.value ='';
      this.service.createPosts(post)
-    .subscribe(response => {
+    .subscribe(
+      response => {
       post['id'] = response.json().id;
       this.posts.splice(0,0, post);
       
-    },error =>{
-      alert('An unexpected error occured');
-      console.log(error);
+    },(error : Response) =>{
+      if(error.status === 400){
+
+      }else{
+        alert('An unexpected error occured');
+        console.log(error);
+      }      
     });
    }
 
    UpdatePost(post){
     this.service.updatePost(post)
-     .subscribe(response =>{
+     .subscribe(
+       response =>{
       console.log(response.json());
      },error =>{
       alert('An unexpected error occured');
@@ -52,13 +60,20 @@ this.service.getPosts()
    }
 
    deletePost(post){
-    this.service.deletePost(post.id)
-     .subscribe(response =>{
+    this.service.deletePost(345)
+     .subscribe(
+       response => {
        let index = this.posts.indexOf(post);
        this.posts.splice(index,1);
-     },error =>{
-      alert('An unexpected error occured');
-      console.log(error);
+     },
+     (error : Response) =>{
+       if(error.status === 404)
+       alert('this post has already been deleted');
+       else{
+        alert('An unexpected error occured');
+        console.log(error);
+       }
+     
     });
   }
 
