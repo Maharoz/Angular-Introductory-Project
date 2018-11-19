@@ -1,6 +1,8 @@
+import { AppError } from './../common/app-error';
 import { PostService } from './../services/post.service';
 import { Component, OnInit } from '@angular/core';
 import { Subscriber } from 'rxjs/Subscriber';
+import { NotFoundError } from '../common/not-found-error';
 
 @Component({
   selector: 'app-post',
@@ -66,8 +68,8 @@ this.service.getPosts()
        let index = this.posts.indexOf(post);
        this.posts.splice(index,1);
      },
-     (error : Response) =>{
-       if(error.status === 404)
+     (error : AppError) =>{
+       if(error instanceof NotFoundError)
        alert('this post has already been deleted');
        else{
         alert('An unexpected error occured');
