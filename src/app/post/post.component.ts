@@ -22,10 +22,8 @@ export class PostComponent implements OnInit {
 
 this.service.getAll()
     .subscribe(
-      response =>{
-      //console.log(response.json());
-      this.posts = response.json();
-    });
+      posts => this.posts = posts
+    );
    }
 
    createPost(input : HTMLInputElement){
@@ -33,8 +31,8 @@ this.service.getAll()
      input.value ='';
      this.service.create(post)
     .subscribe(
-      response => {
-      post['id'] = response.json().id;
+      newPost => {
+      post['id'] = newPost.id;
       this.posts.splice(0,0, post);
       
     },(error : AppError) =>{
@@ -49,15 +47,15 @@ this.service.getAll()
    UpdatePost(post){
     this.service.update(post)
      .subscribe(
-       response =>{
-      console.log(response.json());
+       updatedPost =>{
+      console.log(updatedPost);
      });
    }
 
    deletePost(post){
     this.service.delete(345)
      .subscribe(
-       response => {
+       () => {
        let index = this.posts.indexOf(post);
        this.posts.splice(index,1);
      },
