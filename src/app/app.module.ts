@@ -1,3 +1,5 @@
+import { GithubFollowersService } from './services/github-followers.service';
+import { GithubProfileService } from './github-profile.service';
 import { PostService } from './services/post.service';
 
 import { SummaryPipe } from './summary.pipe';
@@ -79,6 +81,7 @@ import { RouterModule } from '@angular/router';
   providers: [
    CourseService,
    PostService,
+   GithubFollowersService,
    { provide : ErrorHandler , useClass: AppErrorHandler}
  
   ],
