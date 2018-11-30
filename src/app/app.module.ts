@@ -56,7 +56,7 @@ import { RouterModule } from '@angular/router';
     RouterModule.forRoot([
 
       { 
-        path: 'followers/:username' ,
+        path: 'follower/:username' ,
          component: GithubProfileComponent
       },
       {
