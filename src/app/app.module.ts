@@ -24,7 +24,7 @@ import { GitHubFollowersComponent } from './git-hub-followers/git-hub-followers.
 import { HomeComponent } from './home/home.component';
 import { GithubProfileComponent } from './github-profile/github-profile.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -50,7 +50,31 @@ import { NotFoundComponent } from './not-found/not-found.component';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot([
+
+      { 
+        path: 'followers/:username' ,
+         component: GithubProfileComponent
+      },
+      {
+         path: '' , 
+         component: HomeComponent
+      },
+      { 
+        path: 'followers' , 
+        component: GitHubFollowersComponent
+      },
+      
+      { 
+        path: 'posts' ,
+         component: PostComponent
+      },
+      { 
+        path: '**' ,
+         component: NotFoundComponent
+      }
+    ])
   ],
   providers: [
    CourseService,
