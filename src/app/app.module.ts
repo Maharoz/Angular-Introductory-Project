@@ -19,6 +19,11 @@ import { NewCourseFormComponent } from './new-course-form/new-course-form.compon
 import { PostComponent } from './post/post.component';
 import { AppErrorHandler } from './common/app-error-handler';
 import { errorHandler } from '@angular/platform-browser/src/browser';
+import { NavbarComponent } from './navbar/navbar.component';
+import { GitHubFollowersComponent } from './git-hub-followers/git-hub-followers.component';
+import { HomeComponent } from './home/home.component';
+import { GithubProfileComponent } from './github-profile/github-profile.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 
@@ -34,7 +39,12 @@ import { errorHandler } from '@angular/platform-browser/src/browser';
     ContactFormComponent,
     SignupComponent,
     NewCourseFormComponent,
-    PostComponent
+    PostComponent,
+    NavbarComponent,
+    GitHubFollowersComponent,
+    HomeComponent,
+    GithubProfileComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
