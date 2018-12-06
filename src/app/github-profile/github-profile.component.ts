@@ -15,7 +15,8 @@ export class GithubProfileComponent implements OnInit {
     .subscribe(params =>{
       let id = +params.get('id');
       //service.getProfile(id)
-      console.log(id);
+      console.log(params.get('id'));
+      
     });
   }
 
